@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:padding="16dp">
+
+  <EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter string..."
+    android:maxLines="1"
+    android:imeOptions="actionDone"
+    android:id="@+id/etInput"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+  <TextView
+    android:id="@+id/errorText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    android:textColor="#ff0000"
+    android:visibility="gone"
+    android:text="Only alphanumeric characters are allowed"
+    app:layout_constraintTop_toBottomOf="@id/etInput"/>
+
+  <TextView
+    android:id="@+id/output"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    app:layout_constraintTop_toBottomOf="@id/errorText"
+    tools:text="Hello World!"/>
+
+
+  <Button
+    android:id="@+id/btCalculateLength"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/output"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/btReverseString"
+    app:layout_constraintHorizontal_chainStyle="spread"
+    android:layout_marginTop="35dp"
+    android:textAllCaps="false"
+    android:text="Length"/>
+
+  <Button
+    android:id="@+id/btReverseString"
+    android:layout_width="wrap_content"
+    app:layout_constraintEnd_toStartOf="@id/btAppendString"
+    android:layout_height="wrap_content"
+    android:textAllCaps="false"
+    android:text="Reverse"
+    app:layout_constraintStart_toEndOf="@id/btCalculateLength"
+    app:layout_constraintTop_toTopOf="@id/btCalculateLength"
+    app:layout_constraintBottom_toBottomOf="@id/btCalculateLength"/>
+
+  <Button
+    android:id="@+id/btAppendString"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toEndOf="@id/btReverseString"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:textAllCaps="false"
+    android:text="Append"
+    app:layout_constraintTop_toTopOf="@id/btCalculateLength"
+    app:layout_constraintBottom_toBottomOf="@id/btCalculateLength"/>
+
+  <Button
+    android:id="@+id/btCheckNumeric"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/btCalculateLength"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/btClearText"
+    android:layout_marginTop="15dp"
+    app:layout_constraintHorizontal_chainStyle="spread"
+    android:textAllCaps="false"
+    android:text="isNumeric"/>
+
+
+  <Button
+    android:id="@+id/btClearText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toEndOf="@id/btCheckNumeric"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:textAllCaps="false"
+    android:text="Clear"
+    app:layout_constraintTop_toTopOf="@id/btCheckNumeric"
+    app:layout_constraintBottom_toBottomOf="@id/btCheckNumeric"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
